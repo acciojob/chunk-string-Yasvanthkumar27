@@ -1,11 +1,13 @@
 function stringChop(str, size) {
   // your code here
-	if (!str.length || size <= 0) return [];
+	if (!str || size <= 0) return []; // handle null/empty string or invalid size
+    
     let result = [];
-    for (let i = 0; i < str.length; i += Number(size)) {
-        result.push(str.slice(i, i + Number(size)));
+    for (let i = 0; i < str.length; i += size) {
+        result.push(str.substr(i, size)); 
     }
-    return result;
+    return result;
+	
 
 }
 
